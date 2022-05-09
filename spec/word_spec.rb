@@ -58,7 +58,7 @@ describe('#Word') do
       word = Word.new("Apple", nil)
       word.save()
       word.update("Blue")
-      expect(word.word).to(eq("Blue"))
+      expect(word.name).to(eq("Blue"))
     end
   end
 
@@ -70,6 +70,19 @@ describe('#Word') do
       blue.save()
       apple.delete()
       expect(Word.all).to(eq([blue]))
+    end
+  end
+
+  describe('#definitions') do
+    it("returns a word's definitions") do
+      Definition.clear
+      house = Word.new("House", nil)
+      house.save()
+      definition1 = Definition.new("A structure to live in.", house.id, nil)
+      definition1.save()
+      definition2 = Definition.new("A place to keep your stuff.", house.id, nil)
+      definition2.save()
+      expect(house.definitions).to(eq([definition1, definition2]))
     end
   end
 end
