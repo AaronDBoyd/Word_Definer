@@ -82,11 +82,19 @@ describe "#Definition" do
     it("finds definition for a word") do
       word2 = Word.new("House", nil)
       word2.save
-      definition = Definition.new("A device to make calls.", @word.id, nil)
+      definition = Definition.new("A place to keep your stuff.", @word.id, nil)
       definition.save()
       definition2 = Definition.new("A structure to live in.", word2.id , nil)
       definition2.save()
       expect(Definition.find_by_word(word2.id)).to(eq([definition2]))
+    end
+  end
+
+  describe('#word') do 
+    it('finds the word a definition belongs to') do
+      definition = Definition.new('A structure to live in.', @word.id, nil)
+      definition.save()
+      expect(definition.word()).to(eq(@word))
     end
   end
 end
