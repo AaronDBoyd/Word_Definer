@@ -4,13 +4,31 @@ require('definition')
 
 describe('#Word') do 
 
-  # before(:each) do 
-  #   Word.clear()
-  # end
+  before(:each) do 
+    Word.clear()
+  end
 
   describe('.all') do 
     it('returns an empty array when there are no words') do 
       expect(Word.all).to(eq([]))
+    end
+  end
+
+  describe('#save') do 
+    it('saves a word') do 
+      apple = Word.new('Apple', nil)
+      apple.save()
+      banana = Word.new('Banana', nil)
+      banana.save()
+      expect(Word.all).to(eq([apple, banana]))
+    end
+  end
+
+  describe('#==') do
+    it("is the same word if it has the same attributes as another word") do
+      word = Word.new('Blue', nil)
+      word2 = Word.new('Blue', nil)
+      expect(album).to(eq(album2))
     end
   end
 end
