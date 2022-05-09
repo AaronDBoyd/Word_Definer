@@ -28,7 +28,7 @@ describe('#Word') do
     it("is the same word if it has the same attributes as another word") do
       word = Word.new('Blue', nil)
       word2 = Word.new('Blue', nil)
-      expect(album).to(eq(album2))
+      expect(word).to(eq(word2))
     end
   end
 end
