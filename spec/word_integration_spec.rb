@@ -84,36 +84,4 @@ describe('#Definition CRUD functionality', {:type => :feature}) do
   end
 end
 
-# describe('enter a words page', {:type => :feature}) do
-#   it('enters a words page by clicking it and has the word populated') do 
-#     house = Word.new("House123", nil)
-#     house.save()
-#     visit('/words')
-#     click_on("House123")
-#     expect(page).to have_content('House123')
-#   end
-# end
-
-# describe('Update word', {:type => :feature}) do 
-#   it('edits a previously entered word') do 
-#     pencil = Word.new("Pencil", nil)
-#     pencil.save()
-#     visit("/words/#{pencil.id}/edit")
-#     fill_in('name', :with => "Marker")
-#     click_on('Update')
-#     expect(page).to have_content("Marker")
-#   end
-# end
-
-
-
-# describe('add definition', {:type => :feature}) do 
-#   it('adds a definition to a word') do 
-#     pencil = Word.new("Pencil", nil)
-#     pencil.save()
-#     visit("/words/#{word.id}")
-#     fill_in('definition_name', :with => 'object for writing')
-#     click_on('Add Definition')
-#   end
-# end
 
